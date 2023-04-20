@@ -8,6 +8,13 @@ const routes = [
     pages: () => import("../pages"),
     props: true,
   },
+  {
+    path: "/selam",
+    name: "selam",
+
+    component: () => import("../views/Selam.vue"),
+    // props: true,
+  },
 
 ];
 

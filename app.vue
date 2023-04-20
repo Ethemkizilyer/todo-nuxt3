@@ -2,7 +2,7 @@
   <div class="mx-auto bg-red-300 border container">
     <header>
       <nav>
-        <router-link to="/">Todos</router-link>
+        <router-link to="/home">Todos</router-link>
       </nav>
     </header>
     <main>
