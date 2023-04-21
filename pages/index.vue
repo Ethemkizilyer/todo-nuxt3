@@ -7,10 +7,16 @@
     </div>
     <ul>
       <li v-for="(todo, index) in todos" :key="index">
-        {{ todo }}
-        <button @click="removeTodo(index)">Remove</button>
+        {{ todo.text }}
+        <button @click="removeTodo(index)">❌</button>
+        <button @click="editTod(todo.id)">🛠</button>
+        <div v-if="modal== todo.id">
+      <input type="text" v-model="editText" />
+      <button @click="editTodo(todo.id)">Edit</button>
+    </div>
       </li>
     </ul>
+    
   </div>
 </template>
 
@@ -23,21 +29,38 @@ export default {
     const todoStore = useTodoStore();
 
     const newTodo = ref('');
+    const editText = ref('');
+    const modal = ref<number | null>(null);
 
     const addTodo = () => {
-      todoStore.addTodo(newTodo.value);
+      todoStore.addTodo({text:newTodo.value,id:Math.floor(Math.random() * 10000)});
       newTodo.value = '';
     };
 
     const removeTodo = (index: number) => {
       todoStore.removeTodo(index);
     };
+    const editTodo = (id:number) => {
+      // modal.value=!modal.value
+      // console.log(editText.value,id)
+      modal.value=null
+      todoStore.editTodo({text:editText.value,id});
+    };
+    const editTod = (id:number) => {
+      // editTodo(id)
+      modal.value=id
+      // todoStore.editTodo({text:editText.value,id});
+    };
 
     return {
-      todos: todoStore.todos,
+      todos: computed(()=>todoStore.todos),
       newTodo,
       addTodo,
-      removeTodo
+      removeTodo,
+      editTodo,
+      modal,
+      editText,
+      editTod
     };
   },
 };
