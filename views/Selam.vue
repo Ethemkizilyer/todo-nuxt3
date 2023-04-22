@@ -8,6 +8,7 @@
 <script>
 import Deneme from '~/components/Deneme.vue'
 export default {
+  name: "selam",
   components: { Deneme }, 
 
 }

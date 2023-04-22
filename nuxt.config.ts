@@ -2,9 +2,9 @@
 
 export default defineNuxtConfig({
   modules: ["@nuxtjs/tailwindcss", "@pinia/nuxt"],
-  nitro:{
-    externals:{
-        inline:["uuid"]
-    }
-  }
+  nitro: {
+    externals: {
+      inline: ["uuid"],
+    },
+  },
 });

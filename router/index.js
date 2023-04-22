@@ -1,25 +1,17 @@
 import { createRouter, createWebHistory } from "vue-router";
-
+import Selam from "~/views/selam.vue"
 const routes = [
-  {
-    path: "/home",
-    name: "home",
-
-    pages: () => import("../pages"),
-    props: true,
-  },
   {
     path: "/selam",
     name: "selam",
 
-    component: () => import("../views/Selam.vue"),
+    component: Selam,
     // props: true,
   },
-
 ];
 
 const router = createRouter({
-  history: createWebHistory(process.env.BASE_URL),
+  history: createWebHistory(),
   routes,
 });
 
