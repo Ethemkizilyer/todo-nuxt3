@@ -1,6 +1,6 @@
 import { defineStore } from "pinia";
 
-interface TodosState {
+export interface TodosState {
   text: string;
   id: number;
 }

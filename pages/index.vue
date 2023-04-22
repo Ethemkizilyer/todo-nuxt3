@@ -23,17 +23,17 @@
 
 <script lang="ts">
 import { ref } from "vue";
-import { useTodoStore } from "~/store/todo";
+import { TodosState, useTodoStore } from "~/store/todo";
 
 export default {
   setup() {
     const todoStore = useTodoStore();
 
-    const newTodo = ref("");
-    const editText = ref("");
+    const newTodo = ref<string>("");
+    const editText = ref<string>("");
     const modal = ref<number | null>(null);
 
-    const addTodo = () => {
+    const addTodo = (): void  => {
       todoStore.addTodo({
         text: newTodo.value,
         id: Math.floor(Math.random() * 10000),
