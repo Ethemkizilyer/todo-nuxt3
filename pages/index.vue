@@ -7,7 +7,8 @@
     </div>
     <ul>
       <li v-for="(todo, index) in todos" :key="index" class="flex justify-between items-center bg-gray-200 rounded-lg p-4 my-2">
-        {{ todo.text }}
+        <span class="text-lg font-medium">{{ todo.text }}</span>
+        
         <div>
         <button @click="removeTodo(index)">&#10006;</button>
         <button @click="editTod(todo.id)">&#10002;</button></div>

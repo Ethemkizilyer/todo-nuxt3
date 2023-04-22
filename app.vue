@@ -1,8 +1,8 @@
 <template>
-  <div class="mx-auto bg-red-300 border container">
+  <div class="mx-auto fluid bg-red-300 border min-h-[100vh]">
     <header>
       <nav>
-        <router-link to="/home">Todos</router-link>
+        <router-link class="px-4 rounded-r-lg bg-red-500 text-white font-bold p-2 hover:bg-red-700" to="/home">BAKAR</router-link>
       </nav>
     </header>
     <main>
