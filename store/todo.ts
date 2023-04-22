@@ -21,11 +21,9 @@ export const useTodoStore = defineStore("todo", {
     },
     editTodo: ({ text, id }: { text: string; id: number }) => {
       const state = useTodoStore();
-      console.log(text, id);
       state.todos=state.todos.map((item) =>
         item.id == id ? { text, id } : item
       );
-      console.log(state.todos)
     },
   },
 });
